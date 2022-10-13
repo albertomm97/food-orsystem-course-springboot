@@ -26,7 +26,6 @@ public class OrderTrackCommandHandler {
         this.orderRepository = orderRepository;
     }
 
-
     @Transactional(readOnly = true)
     public TrackOrderResponse trackOrder(TrackOrderQuery trackOrderQuery) {
         Optional<Order> order = orderRepository.findByTrackingId(new TrackingId(trackOrderQuery.getOrderTrackingId()));
